@@ -1,4 +1,6 @@
-* {
+*,
+::after,
+::before {
   margin: 0;
   padding: 0;
 }
@@ -8,6 +10,11 @@ html {
 }
 
 body {
+  font-family: var(--font-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 :root {
@@ -27,7 +34,6 @@ body {
   --color-white: #ffffff;
   --color-black: #000000;
 
-  --font-1: font-family: 'Comfortaa', cursive;
-  --font-2: font-family: 'Manrope', sans-serif;
-
+  --font-1: "Comfortaa", cursive;
+  --font-2: "Manrope", sans-serif;
 }
