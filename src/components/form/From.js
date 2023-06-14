@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "../../style/form/Form.css";
 
 import { BsPlus } from "react-icons/bs";
-const Form = () => {
+const Form = (props) => {
   const [randomColor, setRandomColor] = useState("");
   const [enteredTitle, setEnteredTitle] = useState("");
 
@@ -23,7 +23,7 @@ const Form = () => {
       tagColor: randomColor,
       bgColor: randomColor,
     };
-    console.log(newData);
+    props.newDataClimbUp(newData);
   };
 
   // Function Input

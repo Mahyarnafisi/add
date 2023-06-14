@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Form from "./components/form/From";
 import List from "./components/list/List";
@@ -12,9 +12,17 @@ const initiateData = [
 ];
 
 function App() {
+  const [updateData, setUpdateData] = useState(initiateData);
+  const newDataPush = (data) => {
+    setUpdateData((prevData) => {
+      return [data, ...prevData];
+    });
+    console.log(updateData);
+    console.log("from appjs");
+  };
   return (
     <div className="App">
-      <Form />
+      <Form newDataClimbUp={newDataPush} />
       <List initiateData={initiateData} />
     </div>
   );
