@@ -15,6 +15,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  letter-spacing: -1px;
 }
 
 :root {
@@ -30,10 +31,19 @@ body {
   --color-tertiary-2: #ff9ab1;
   --color-tertiary-3: #fde5ed;
 
-  --color-text: #2f2d2eff;
+  --color-text: #363435;
   --color-white: #ffffff;
   --color-black: #000000;
 
   --font-1: "Comfortaa", cursive;
   --font-2: "Manrope", sans-serif;
+}
+
+.btn-icon {
+  color: var(--color-white);
+  font-size: 5.6rem;
+}
+
+.hover:hover {
+  filter: brightness(110%);
 }

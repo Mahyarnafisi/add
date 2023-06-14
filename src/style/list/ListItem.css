@@ -1,0 +1,42 @@
+.list-item {
+  box-shadow: 0 0.5rem 5rem #00000015, -1rem -1rem 5rem #ffffff25;
+  padding: 3rem;
+  border-radius: 2rem;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: column wrap;
+  gap: 2rem;
+  height: 15rem;
+  max-width: 25rem;
+}
+
+.list__title {
+  color: var(--color-text);
+  font-family: var(--font-1);
+  font-size: 2.8rem;
+  font-weight: bolder;
+}
+
+.list__date {
+  font-size: 1.8rem;
+  opacity: 50%;
+  font-weight: 600;
+}
+
+.list__number {
+  position: absolute;
+  top: -2rem;
+  right: -2rem;
+  background-color: var(--color-secondary-1);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 999px;
+  color: var(--color-white);
+  font-size: 2.1rem;
+}

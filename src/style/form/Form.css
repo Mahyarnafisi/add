@@ -1,0 +1,29 @@
+.form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  margin-bottom: 6rem;
+}
+
+.form__input {
+  width: 50vw;
+  padding: 1rem;
+  font-size: 2.8rem;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid var(--color-secondary-3);
+}
+
+.form__input::placeholder {
+  opacity: 50%;
+}
+
+.form__btn--submit {
+  width: 100%;
+  border: none;
+  background-color: var(--color-primary-1);
+  border-radius: 1.2rem;
+  transition: all 0.2s ease-in-out;
+}
