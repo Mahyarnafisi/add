@@ -9,7 +9,7 @@
   flex-flow: column wrap;
   gap: 2rem;
   height: 15rem;
-  max-width: 25rem;
+  max-width: 35rem;
 }
 
 .list__title {
