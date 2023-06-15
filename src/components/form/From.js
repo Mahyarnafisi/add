@@ -4,34 +4,37 @@ import "../../style/form/Form.css";
 
 import { BsPlus } from "react-icons/bs";
 const Form = (props) => {
-  const [randomColor, setRandomColor] = useState("");
+  const [randomColor, setRandomColor] = useState("#ff7191");
   const [enteredTitle, setEnteredTitle] = useState("");
 
   // function of random color picker ----------------------
   const randomNumber = Math.trunc(Math.random() * 2);
   const arrayColor = ["#fdbf11", "#6c56c2", "#ff7191"];
 
-  const ColorPickHandler = (event) => {
+  // Function Input store in state
+  const inputChangeHandler = (e) => {
+    setEnteredTitle(e.target.value);
+  };
+  // function to create new object to send up from inputs
+  const onSubmitHandler = (event) => {
     event.preventDefault();
+    // pick a random color
     setRandomColor(() => {
-      setRandomColor(arrayColor[randomNumber]);
+      return arrayColor[randomNumber];
     });
-    const newData = {
+    // create new object of data to send it up
+    const newObject = {
       id: (Math.random() * 100 + Math.random() * 50).toFixed(3),
       title: enteredTitle,
       date: new Date(),
       tagColor: randomColor,
       bgColor: randomColor,
     };
-    props.newDataClimbUp(newData);
-  };
-  // Function Input
-  const inputChangeHandler = (e) => {
-    setEnteredTitle(e.target.value);
+    props.newDataClimbUp(newObject);
   };
 
   return (
-    <form className="form" onSubmit={ColorPickHandler}>
+    <form className="form" onSubmit={onSubmitHandler}>
       <input type="text" className="form__input" placeholder="What is in your mind?" onChange={inputChangeHandler} />
       <button type="submit" className="form__btn--submit hover">
         <BsPlus className="btn-icon" />
