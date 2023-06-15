@@ -25,7 +25,6 @@ const Form = (props) => {
     };
     props.newDataClimbUp(newData);
   };
-
   // Function Input
   const inputChangeHandler = (e) => {
     setEnteredTitle(e.target.value);

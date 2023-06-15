@@ -11,19 +11,18 @@ const initiateData = [
   { id: 5, title: "Go to gym and as petters", date: "2023 11 01", number: 5, tagColor: "#ff7191", bgColor: "#6c56c2" },
 ];
 
-function App() {
+function App(props) {
   const [updateData, setUpdateData] = useState(initiateData);
   const newDataPush = (data) => {
     setUpdateData((prevData) => {
       return [data, ...prevData];
     });
-    console.log(updateData);
-    console.log("from appjs");
   };
+
   return (
     <div className="App">
-      <Form newDataClimbUp={newDataPush} />
-      <List initiateData={initiateData} />
+      <Form newDataClimbUp={initiateData} />
+      <List initiateData={updateData} />
     </div>
   );
 }
