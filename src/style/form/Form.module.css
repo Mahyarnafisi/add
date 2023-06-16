@@ -16,10 +16,9 @@
   border-bottom: 3px solid var(--color-secondary-3);
   transition: all 0.2s ease-in-out;
 }
-.form__input.invalid {
+.invalid {
   border-bottom: 3px solid #ff3511;
-  background-color: #ff351115;
-  transition: all 0.2s ease-in-out;
+  background-color: #ff3511;
 }
 
 .form__input::placeholder {

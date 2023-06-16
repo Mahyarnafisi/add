@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "../../style/form/Form.css";
+import styles from "../../style/form/Form.module.css";
 
 import { BsPlus } from "react-icons/bs";
 const Form = (props) => {
@@ -25,7 +25,15 @@ const Form = (props) => {
     if (enteredTitle.trim().length === 0) {
       setIsValid(false);
     }
-
+    const newDataObject = {
+      id: (Math.random() * 100 + Math.random() * 100).toFixed(3),
+      title: enteredTitle,
+      date: new Date(),
+      number: props.initiateData.length + 1,
+      bgColor: arrayColor[randomNumber],
+      tagColor: arrayColor[randomNumber],
+    };
+    props.newDataClimbUp(newDataObject);
     // pick a random color
     // setRandomColor(() => {
     //   return arrayColor[randomNumber];
@@ -42,10 +50,10 @@ const Form = (props) => {
   };
 
   return (
-    <form className={`form`} onSubmit={onSubmitHandler}>
-      <input className={`form__input ${!isValid ? "invalid" : ""}`} type="text" placeholder={`${!isValid ? "You need to write here!" : "What is in your mind?"}`} onChange={inputChangeHandler} />
-      <button type="submit" className="form__btn--submit hover">
-        <BsPlus className="btn-icon" />
+    <form className={styles["form"]} onSubmit={onSubmitHandler}>
+      <input className={`${styles.form__input} ${!isValid && "invalid"} `} type="text" placeholder={`${!isValid ? "You need to write here!" : "What is in your mind?"}`} onChange={inputChangeHandler} />
+      <button type="submit" className={`${styles["form__btn--submit"]} hover`}>
+        <BsPlus className={`btn-icon`} />
       </button>
     </form>
   );
