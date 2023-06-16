@@ -1,14 +1,13 @@
 import React from "react";
-import "../../style/list/ListItem.css";
-
+import styles from "../../style/list/ListItem.module.css";
 const ListItem = (props) => {
   return (
-    <div className="list-item hover" style={{ backgroundColor: `${props.bgColor}` }}>
-      <div className="list__date" style={{ color: `${props.bgColor}` }}>
+    <div className={`${styles["list-item"]} `} style={{ backgroundColor: `${props.bgColor}` }}>
+      <div className={styles["list__item"]} style={{ color: `${props.bgColor}` }}>
         {props.date}
       </div>
-      <div className="list__title">{props.title}</div>
-      <div className="list__number">{props.number}</div>
+      <div className={`${styles["list__title"]}`}>{props.title}</div>
+      <div className={`${styles["list__number"]}`}>{props.number}</div>
     </div>
   );
 };
